@@ -1,20 +1,21 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
-function handleInAppBrowserMessage(params) {
+function handleInAppBrowserMessage(params, ref) {
+  console.log(params);
+
   const elem = document.getElementById('state-container');
   if (elem) {
     elem.innerHTML = params.data.newState;
+    ref.close();
+  } else {
+    console.error('Cannot find input element!');
   }
 }
 
 function handleEnrollClick() {
-  console.log(1);
-  const embeddedUrl = 'http://localhost:3333';
-
-  const ref = cordova.InAppBrowser.open(embeddedUrl, '_blank', 'location=no');
-  console.log(2);
-  ref.addEventListener('message', handleInAppBrowserMessage);
-  console.log(3);
+  const embeddedUrl = 'http://10.0.2.2:3333';
+  const ref = cordova.InAppBrowser.open(embeddedUrl, '_blank', 'location=no,fullscreen=no,zoom=no');
+  ref.addEventListener('message', (params) => handleInAppBrowserMessage(params, ref));
 }
 
 function onDeviceReady() {

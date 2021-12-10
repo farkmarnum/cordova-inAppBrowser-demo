@@ -52,11 +52,16 @@ p {
 }
 
 .btn {
-  padding: 8px 16px;
+  padding: 12px 24px;
   background: none;
   background-color: blue;
   color: #fff;
   border: none;
   border-radius: 5px;
   outline: none;
+  font-size: 20px;
+}
+
+#state-container {
+  font-weight: bold;
 }
