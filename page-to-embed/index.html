@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <style>
+      body {
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: none;
+        background-color:#ffffff;
+        font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+        font-size:12px;
+        height:100vh;
+        margin:0px;
+        padding:0px;
+        padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+        width:100%;
+      }
+
+      h1 {
+          font-size:24px;
+          font-weight:normal;
+          margin:0px;
+          overflow:visible;
+          padding:0px;
+          text-align:center;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .app {
+        padding: 64px 32px;
+        line-height: 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background: white;
+        border: 1px solid blue;
+        color: blue;
+        border-radius: 5px;
+        outline: none;
+        font-size: 20px;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        box-shadow: rgba(100, 100, 111, 0.26) 0px 0 5px 0px;
+        padding: 16px 0;
+        background: white;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: rgba(100, 100, 111, 0.26) 0px 0 5px 0px;
+        padding: 16px 0;
+        background: white;
+      }
+    </style>
+
+    <script>
+      function submit() {
+        const message = JSON.stringify({ newState: document.getElementById('input').value })
+
+        if (window.webkit && window.webkit.messageHandlers) {
+          window.webkit.messageHandlers.cordova_iab.postMessage(message)
+        } else {
+          console.error('Webkit methods not found!')
+        }
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Nayya Embedded Experience</h1>
+    </div>
+
+    <div class="app">
+      <p style="color: lightgray">
+        This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed.
+      </p>
+
+      <br />
+      <br />
+
+      <p>
+        Input new state: <input id="input" />
+      </p>
+
+      <br />
+      <br />
+
+      <p style="color: lightgray">
+        This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed. This is some content to show that the main container can scroll while the header and footer remain fixed.
+      </p>
+    </div>
+
+    <div class="footer">
+      <button onclick="submit()" class="btn">Submit</button>
+    </div>
+  </body>
+</html>

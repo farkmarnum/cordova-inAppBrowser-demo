@@ -14,7 +14,7 @@ function handleInAppBrowserMessage(params, ref) {
 
 function handleEnrollClick() {
   const embeddedUrl = 'http://10.0.2.2:3333';
-  const ref = cordova.InAppBrowser.open(embeddedUrl, '_blank', 'location=no,fullscreen=no,zoom=no');
+  const ref = cordova.InAppBrowser.open(embeddedUrl, '_blank', 'location=no,fullscreen=no,zoom=no'); // NOTE: this needs iOS options as well
   ref.addEventListener('message', (params) => handleInAppBrowserMessage(params, ref));
 }
 
