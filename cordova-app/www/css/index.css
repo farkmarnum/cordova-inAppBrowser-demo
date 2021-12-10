@@ -48,7 +48,8 @@ p {
 }
 
 .app {
-  padding: 32px;
+  padding: 64px 32px;
+  line-height: 20px;
 }
 
 .btn {
@@ -64,4 +65,15 @@ p {
 
 #state-container {
   font-weight: bold;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  box-shadow: rgba(100, 100, 111, 0.26) 0px 0 5px 0px;
+  padding: 16px 0;
+  background: white;
 }
