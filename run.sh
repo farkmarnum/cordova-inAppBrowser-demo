@@ -1,0 +1,1 @@
+npx nodemon -x "cordova emulate android" -e "js html css"
